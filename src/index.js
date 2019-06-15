@@ -4,27 +4,15 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
+// Literal
+const literalNumber = 99;
+console.log(literalNumber);
 
-console.log(1 == '1');
-console.log(1 === '1');
+// Function syntax
+// Perform a type-conversion in a non-constructor context
+console.log(Number(55));
+console.log(Number('33'));
+console.log(Number('44px'));
 
-// Truthy values
-console.log('Boolean value true', !!true);
-console.log('Same as !!true', Boolean(true));
-console.log('Empty object', !!{});
-console.log('Empty array', !![]);
-console.log('New date', !!new Date());
-console.log('Zero', !!0);
-console.log('String with zero', !!'0');
-console.log('Number 42', !!42);
-console.log('Number -42', !!-42);
-console.log('Number Pi', !!3.14);
-console.log('Number Min Pi', !!-3.14);
-
-// Falsy values
-console.log('Boolean value false', !!false);
-console.log('Boolean value null', !!null);
-console.log('Undefined', !!undefined);
-console.log('Zero', !!0);
-console.log('Not a number', !!NaN);
-console.log('Empty string', !!'');
+// Constructor syntax, creates a wrapper object
+console.log(new Number('44px')); // Avoid using this
