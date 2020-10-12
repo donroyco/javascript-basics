@@ -4,15 +4,26 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-// Literal
-const literalNumber = 99;
-console.log(literalNumber);
 
-// Function syntax
-// Perform a type-conversion in a non-constructor context
-console.log(Number(55));
-console.log(Number('33'));
-console.log(Number('44px'));
+// 1: Function declaration
+function makeCar() {
+  console.log('Making car...');
+}
 
-// Constructor syntax, creates a wrapper object
-console.log(new Number('44px')); // Avoid using this
+makeCar();
+
+// 2: Function expression
+const makeCarExpression = function myFunction() {};
+console.log(makeCarExpression.name);
+
+// 3: Arrow functions
+const makeCarArrow = () => {
+  console.log('Making car inside Arrow...');
+};
+
+makeCarArrow();
+
+
+const makeCarArrowShorthand = () => console.log('Very short');
+
+makeCarArrowShorthand();
