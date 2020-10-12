@@ -4,21 +4,21 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-
-// name = parameter
-// default value = 'Fiat';
-function makeCar(name = 'Fiat') {
-  // name = name || 'Porsche';
-
-  // if (!name) {
-  //   name = 'Porsche';
-  // }
-
-  // return name ? console.log(`Making car: ${name.toUpperCase()}`) : '';
-  console.log(`Making car: ${name.toUpperCase()}`);
+// Old way of doing this
+function makeCarPrice() {
+  const totalPrice = Array.from(arguments).reduce((prev, next) => prev + next);
+  console.log(`Total: ${totalPrice} USD`);
 }
 
-// strings = arguments
-makeCar('Porsche');
-makeCar('Ferrari');
-makeCar();
+makeCarPrice(11, 44, 55, 99);
+
+// New way of doing this, less code
+
+// ...params = rest parameter; gives the rest of the arguments as Array
+
+function makeCarPriceRest(...params) {
+  const totalPrice = params.reduce((prev, next) => prev + next);
+  console.log(`Total Rest: ${totalPrice} USD`);
+}
+
+makeCarPriceRest(34, 76, 43, 23);
