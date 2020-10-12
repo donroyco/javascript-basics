@@ -5,25 +5,20 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 
-// 1: Function declaration
-function makeCar() {
-  console.log('Making car...');
+// name = parameter
+// default value = 'Fiat';
+function makeCar(name = 'Fiat') {
+  // name = name || 'Porsche';
+
+  // if (!name) {
+  //   name = 'Porsche';
+  // }
+
+  // return name ? console.log(`Making car: ${name.toUpperCase()}`) : '';
+  console.log(`Making car: ${name.toUpperCase()}`);
 }
 
+// strings = arguments
+makeCar('Porsche');
+makeCar('Ferrari');
 makeCar();
-
-// 2: Function expression
-const makeCarExpression = function myFunction() {};
-console.log(makeCarExpression.name);
-
-// 3: Arrow functions
-const makeCarArrow = () => {
-  console.log('Making car inside Arrow...');
-};
-
-makeCarArrow();
-
-
-const makeCarArrowShorthand = () => console.log('Very short');
-
-makeCarArrowShorthand();
