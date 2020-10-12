@@ -4,21 +4,13 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-// Old way of doing this
-function makeCarPrice() {
-  const totalPrice = Array.from(arguments).reduce((prev, next) => prev + next);
-  console.log(`Total: ${totalPrice} USD`);
+// Default function
+function makeCarPrice(...params) {
+  return params.reduce((prev, next) => prev + next);
 }
 
-makeCarPrice(11, 44, 55, 99);
+// Arrow function
+const makeCarPriceArrow = (...params) => params.reduce((prev, next) => prev + next);
 
-// New way of doing this, less code
-
-// ...params = rest parameter; gives the rest of the arguments as Array
-
-function makeCarPriceRest(...params) {
-  const totalPrice = params.reduce((prev, next) => prev + next);
-  console.log(`Total Rest: ${totalPrice} USD`);
-}
-
-makeCarPriceRest(34, 76, 43, 23);
+console.log(`Total: ${makeCarPrice(11, 22, 33, 44, 55)}`);
+console.log(`Total Arrow: ${makeCarPriceArrow(21, 88, 33, 44, 55)}`);
