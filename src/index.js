@@ -5,28 +5,15 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 
-// Scope 1
-// const anotherID = '32453dsa';
-//
-// function makeCarPartID(id) {
-//   // Scope 2
-//   console.log(id, anotherID);
-// }
-//
-// makeCarPartID('x32gf2');
+// IIFE - Immediately-Invoked Function Expressions
 
-
-
-function makeCarPartID(id) {
+const carPartId = (function (id) {
   const theId = `CAR_PART_${id}`;
-  // return function (name) {
-  //   return `${theId}_${name.toUpperCase()}`;
-  // };
-  // Arrow function
-  return (name) => `${theId}_${name.toUpperCase()}`;
-}
+  return function (name) {
+    return `${theId}_${name.toUpperCase()}`;
+  }
+}('x23f23f3yjnu'));
 
-const carPartId = makeCarPartID('x32gf2');
 console.log(carPartId('Left Door'));
 console.log(carPartId('Right Door'));
 console.log(carPartId('Windscreen'));
