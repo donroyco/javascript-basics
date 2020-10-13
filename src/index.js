@@ -5,15 +5,13 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 
-// IIFE - Immediately-Invoked Function Expressions
+function carPartId(name, fn) {
+  const theId = `CAR_PART_x3v0rk4`;
+  return fn(`${theId}_${name.toUpperCase()}`);
+}
 
-const carPartId = (function (id) {
-  const theId = `CAR_PART_${id}`;
-  return function (name) {
-    return `${theId}_${name.toUpperCase()}`;
-  }
-}('x23f23f3yjnu'));
+const carPart = carPartId('Left Door', function (id) {
+  return `Car Part ID: ${id}`;
+});
 
-console.log(carPartId('Left Door'));
-console.log(carPartId('Right Door'));
-console.log(carPartId('Windscreen'));
+console.log(carPart);
