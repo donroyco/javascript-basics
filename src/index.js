@@ -14,8 +14,15 @@ const drink = {
   },
 };
 
-// Delete key with delete, but it is a slow operation
-// delete drink.name;
+// Shallow copies
+// Reference: Merge all drink object items into a new object. This is only working for top level object keys
+// const drinkClone = Object.assign({}, drink);
+// const drinkClone = {...drink}; // = the same as Object.assign
 
-const { price, ...rest } = drink;
-console.log(price, rest, drink);
+// Deep copy
+const drinkStringified = JSON.stringify(drink);
+const drinkClone = JSON.parse(drinkStringified);
+drinkClone.id = 'abcd';
+drinkClone.price.sale = 79;
+
+console.log(drinkClone);
