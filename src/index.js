@@ -14,18 +14,8 @@ const drink = {
   },
 };
 
-// Update existing property
-// drink.name = 'Peach';
+// Delete key with delete, but it is a slow operation
+// delete drink.name;
 
-// Add property, it will automatically create
-// drink.brand = 'The Coca Cola Company';
-
-// Update or add property
-function propUpdate(prop, value) {
-  drink[prop] = value;
-}
-
-propUpdate('brand', 'The Coca Cola Company');
-propUpdate('name', 'Peach');
-
-console.log(drink);
+const { price, ...rest } = drink;
+console.log(price, rest, drink);
