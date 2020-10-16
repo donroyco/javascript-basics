@@ -14,22 +14,23 @@ const drink = {
   },
 };
 
-// Nested object fetch value of 'full' key
-const { id, name, price: { full } } = drink;
+// 1. Value exists
 
-console.log( id, name, full );
+if (drink.id) {
+  console.log(drink.id);
+}
 
-// Move this block to line 17
-// When duplicate identifier key, you can rename them in destructured object
-// const id = 1234;
+for (const prop in drink) {
+  // You can get the value of a key by providing the key in square brackets
+  console.log(drink[prop]);
+}
 
-// Renamed to myId
-// const { id: myId, name, price: { full } } = drink;
-//
-// console.log( id, myId, name, full );
-// ---------------
+// Gives an array of all values on drink object
+Object.values(drink);
 
 
-// Use spread operator to get the rest of object keys
-// const { id, name, ...rest } = drink;
-// console.log( id, name, rest );
+// 2. Property exists
+
+console.log(drink.hasOwnProperty('name'));
+console.log(Object.prototype.hasOwnProperty.call(drink, 'name'));
+console.log(Object.keys(drink).includes('name'));
