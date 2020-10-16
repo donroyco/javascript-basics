@@ -14,23 +14,18 @@ const drink = {
   },
 };
 
-// 1. Value exists
+// Update existing property
+// drink.name = 'Peach';
 
-if (drink.id) {
-  console.log(drink.id);
+// Add property, it will automatically create
+// drink.brand = 'The Coca Cola Company';
+
+// Update or add property
+function propUpdate(prop, value) {
+  drink[prop] = value;
 }
 
-for (const prop in drink) {
-  // You can get the value of a key by providing the key in square brackets
-  console.log(drink[prop]);
-}
+propUpdate('brand', 'The Coca Cola Company');
+propUpdate('name', 'Peach');
 
-// Gives an array of all values on drink object
-Object.values(drink);
-
-
-// 2. Property exists
-
-console.log(drink.hasOwnProperty('name'));
-console.log(Object.prototype.hasOwnProperty.call(drink, 'name'));
-console.log(Object.keys(drink).includes('name'));
+console.log(drink);
