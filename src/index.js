@@ -8,18 +8,18 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 const drink = {
   id: 'xhs8Pla',
   name: 'Coca-Cola',
+  price: {
+    sale: 99,
+    full: 129,
+  }
 };
 
-const price = {
-  sale: 99,
-  full: 129,
-};
+// Effective check for an object
+console.log(Object.prototype.toString.call(drink));
 
-// Merge objects
-// Using Object.assign, { price } is creating an object inside object
-// const mergedDrink = Object.assign({}, drink, { price });
+// In function
+function getType(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+}
 
-// Using spread operator
-const mergedDrink = { ...drink, ...{ price } };
-
-console.log(mergedDrink);
+console.log(getType(drink));
