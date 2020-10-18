@@ -5,17 +5,6 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 // Terminology: Item in array = element
-const drinks = ['Lemonade', 'Lime', 'Peach'];
+const drinks = [['Lemonade', 99], ['Lime', 99], ['Peach', 99]];
 
-console.log(drinks);
-console.log('----------');
-
-// Access last item in array
-const itemIndex = drinks.length - 1;
-console.log(drinks[itemIndex]);
-
-// How to empty array
-drinks.length = 0;
-// Remove elements from array
-drinks.splice(0, drinks.length);
-console.log(drinks);
+console.log(`Drink: ${drinks[0][0]}, Price: ${drinks[0][1]}`);
