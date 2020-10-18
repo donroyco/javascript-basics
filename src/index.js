@@ -14,12 +14,14 @@ const drink = {
   }
 };
 
-// Effective check for an object
-console.log(Object.prototype.toString.call(drink));
-
-// In function
-function getType(obj) {
-  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+// Loop over all object keys
+// for...in
+for (const prop in drink) {
+  const value = drink[prop];
+  // Check if iterable in nested loop
+  if (Object.prototype.toString.call(value) === '[object Object]') {
+    for (const key in value) {
+      console.log(key);
+    }
+  }
 }
-
-console.log(getType(drink));
