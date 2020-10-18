@@ -8,21 +8,18 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 const drink = {
   id: 'xhs8Pla',
   name: 'Coca-Cola',
-  price: {
-    sale: 99,
-    full: 129,
-  },
 };
 
-// Shallow copies
-// Reference: Merge all drink object items into a new object. This is only working for top level object keys
-// const drinkClone = Object.assign({}, drink);
-// const drinkClone = {...drink}; // = the same as Object.assign
+const price = {
+  sale: 99,
+  full: 129,
+};
 
-// Deep copy
-const drinkStringified = JSON.stringify(drink);
-const drinkClone = JSON.parse(drinkStringified);
-drinkClone.id = 'abcd';
-drinkClone.price.sale = 79;
+// Merge objects
+// Using Object.assign, { price } is creating an object inside object
+// const mergedDrink = Object.assign({}, drink, { price });
 
-console.log(drinkClone);
+// Using spread operator
+const mergedDrink = { ...drink, ...{ price } };
+
+console.log(mergedDrink);
