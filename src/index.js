@@ -4,18 +4,16 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-const drinks = [['Lemonade', 99], ['Lime', 99], ['Peach', 89]];
+const drinks = [['Lemonade', 99], ['Lime', 99]];
+const newDrinks = [['Peach', 89]];
 
-// Shallow clone = one level down
-// const drinksClone = [...drinks];
-// const drinksClone = drinks.slice();
-// const drinksClone = Array.from(drinks);
+// concat: Immutable way of merging arrays
+// const merged = drinks.concat(newDrinks);
 
-// Deep clone
-const drinksClone = JSON.parse(JSON.stringify(drinks));
+// spread operator: Immutable way of merging arrays
+const merged = [...drinks, ...newDrinks];
 
-drinksClone[0][1] = 1000;
-
+console.log(merged);
 console.log(drinks);
-console.log(drinksClone);
+console.log(newDrinks);
 
