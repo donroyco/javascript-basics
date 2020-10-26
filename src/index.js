@@ -10,16 +10,21 @@ const items = [
   { id: '🥤', name: 'Big Slurp', price: 299 },
 ];
 
-// Array filter: create a new array with values of the values that meet a certain condition
+// Array reduce: create a new array with values of the values that meet a certain condition
 
-// Syntax Array.filter
-// const returnValue = items.filter((value, index, array) => { ... })
+// Syntax Array.reduce
+// 0 here is the initial value
+// const reducedValue = items.reduce((prev, next, index, array) => {}, 0);
 
 // Simple example
-// const filtered = [true, false, true].filter(Boolean);
-// console.log(filtered);
+// const reducedValue = [1,2,3,4,5].reduce((prev, next) => prev + next);
+// console.log(reducedValue);
 
-// Filter all items in array with at least certain price
-const expensiveItems = items.filter(item => item.price > 199) ;
-console.log(expensiveItems);
+// Array of numbers, they can be chained
+// const reduced = items.map(item => item.price).reduce((prev, next) => prev + next);
+// console.log(reduced);
+
+// Array of objects
+const reducedPrices = items. reduce((prev, next) => prev + next.price, 0);
+console.log(reducedPrices);
 console.log(items);
