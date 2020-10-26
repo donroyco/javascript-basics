@@ -5,26 +5,25 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 const items = [
-  { id: '🍔', name: 'Super Burger', price: 399, promo: false },
-  { id: '🍟', name: 'Jumbo Fries', price: 199, promo: false },
-  { id: '🥤', name: 'Big Slurp', price: 299, promo: true },
+  { id: '🍔', name: 'Super Burger', price: 399, stock: true },
+  { id: '🍟', name: 'Jumbo Fries', price: 199, stock: true },
+  { id: '🥤', name: 'Big Slurp', price: 299, stock: false },
 ];
 
-// Array some: if any element within a array pass a condition
+// Array every: if every element within a array passes a condition
 
-// Syntax Array.some
+// Syntax Array.every
 // returnValue can only be true or false
-// const returnValue = items.some((value, index, array) => { ... });
+// const returnValue = items.every((value, index, array) => { ... });
 
 // Simple example
-// const greaterThanOne = [1,2,3].some(x => x > 1);
-// console.log(greaterThanOne);
+// const isEveryValueTrue = [true, true, false].every(Boolean);
+// console.log(isEveryValueTrue);
 
-// Is one of our items a promo?
-const isInPromo = items.some(item => item.promo);
-
-// If promo, price is 600. Start value (0) is needed.
-const total = isInPromo ? 600 : items.reduce((prev, next) => prev + next.price, 0);
-console.log(total);
-
+const isInStock = items.every(item => item.stock);
+if (!isInStock) {
+  console.log(
+    `Sorry, ${items.find(item => !item.stock).name} is out of stock. Try again later.`
+  )
+}
 console.log(items);
