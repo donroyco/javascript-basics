@@ -4,13 +4,21 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-const drinks = [['Lemonade', 99], ['Lime', 99], ['Peach', 99]];
+const drinks = ['Lemonade', 'Lime', 'Peach'];
 
-// Array destructuring
-const [ drinkOne, drinkTwo ] = drinks;
-console.log(drinkOne, drinkTwo);
+// Beginning of array
+// drinks.unshift('Water'); // mutable: changes original
+// const newDrinksStartArray = ['Water', ...drinks]; // immutable: new array
 
-// Destructure deeper arrays and give the rest (...rest) back in a separate array
-const [one, [a, b], ...rest ] = drinks;
+// Middle of array
+const index = 1;
+drinks.splice(index, 0, 'Cola'); // mutable: changes original
+const newDrinksMiddleArray = [...drinks.splice(0, index), 'Mojito', ...drinks.splice(index -1)]; // immutable: new array
+console.log(newDrinksMiddleArray);
 
-console.log(one, a, b, rest );
+// End of array
+// drinks.push('Cola'); // mutable: changes original
+// const newDrinksEndArray = [...drinks, 'Cola']; // immutable: new array
+// console.log(newDrinksEndArray);
+
+console.log(drinks);
