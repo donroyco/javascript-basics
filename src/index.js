@@ -4,14 +4,33 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-const drinks = ['Pepsi', 'Lemonade', 'Cola'];
+const items = [
+  { id: '🍔', name: 'Super Burger', price: 399 },
+  { id: '🍟', name: 'Jumbo Fries', price: 199 },
+  { id: '🥤', name: 'Big Slurp', price: 299 },
+];
 
-for (let i = 0; i < drinks.length; i++) {
-  console.log(drinks[i]);
-}
+// Syntax forEach
+// items.forEach((value, index, array) => { ... });
 
-console.log('-------------');
+// ['a', 'b', 'c', 'd'].forEach((item, index) => {
+//   console.log(item, index);
+// });
 
-for(const drink of drinks) {
-  console.log(drink);
-}
+// items.forEach((item) => {
+//   app.innerHTML += `
+//     <li>
+//         ${item.id} ${item.name} - ${item.price}
+//     </li>
+//   `
+// });
+
+// forEach without forEach
+// for(let i = 0; i < items.length; i++) {
+//   const item = items[i];
+//   app.innerHTML += `
+//     <li>
+//         ${item.id} ${item.name} - ${item.price}
+//     </li>
+//   `
+// }
