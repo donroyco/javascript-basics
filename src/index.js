@@ -4,16 +4,9 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-const drinks = [
-  { name: 'Lemonade', price: 79 },
-  { name: 'Peach', price: 99 },
-  { name: 'Lime', price: 89 },
-];
-
-// Reverse array
-// const drinksReverse = drinks.reverse();
-
-// Sort array (by price)
-const drinksSort = drinks.sort((a, b) => a.price - b.price);
-console.log(drinksSort);
+console.log(typeof []);
+console.log([] instanceof Array);
+console.log(new Array() instanceof Array);
+console.log(Array.isArray([1,2,3,4])); // Best way to check if it's an array, new way to do so
+console.log(Object.prototype.toString.call([]));
 
