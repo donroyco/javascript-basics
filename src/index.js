@@ -4,16 +4,16 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-const drinks = [['Lemonade', 99], ['Lime', 99]];
-const newDrinks = [['Peach', 89]];
+const drinks = [
+  { name: 'Lemonade', price: 79 },
+  { name: 'Peach', price: 99 },
+  { name: 'Lime', price: 89 },
+];
 
-// concat: Immutable way of merging arrays
-// const merged = drinks.concat(newDrinks);
+// Reverse array
+// const drinksReverse = drinks.reverse();
 
-// spread operator: Immutable way of merging arrays
-const merged = [...drinks, ...newDrinks];
-
-console.log(merged);
-console.log(drinks);
-console.log(newDrinks);
+// Sort array (by price)
+const drinksSort = drinks.sort((a, b) => a.price - b.price);
+console.log(drinksSort);
 
