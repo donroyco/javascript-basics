@@ -5,26 +5,26 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
 const items = [
-  { id: '🍔', name: 'Super Burger', price: 399 },
-  { id: '🍟', name: 'Jumbo Fries', price: 199 },
-  { id: '🥤', name: 'Big Slurp', price: 299 },
+  { id: '🍔', name: 'Super Burger', price: 399, promo: false },
+  { id: '🍟', name: 'Jumbo Fries', price: 199, promo: false },
+  { id: '🥤', name: 'Big Slurp', price: 299, promo: true },
 ];
 
-// Array reduce: create a new array with values of the values that meet a certain condition
+// Array some: if any element within a array pass a condition
 
-// Syntax Array.reduce
-// 0 here is the initial value
-// const reducedValue = items.reduce((prev, next, index, array) => {}, 0);
+// Syntax Array.some
+// returnValue can only be true or false
+// const returnValue = items.some((value, index, array) => { ... });
 
 // Simple example
-// const reducedValue = [1,2,3,4,5].reduce((prev, next) => prev + next);
-// console.log(reducedValue);
+// const greaterThanOne = [1,2,3].some(x => x > 1);
+// console.log(greaterThanOne);
 
-// Array of numbers, they can be chained
-// const reduced = items.map(item => item.price).reduce((prev, next) => prev + next);
-// console.log(reduced);
+// Is one of our items a promo?
+const isInPromo = items.some(item => item.promo);
 
-// Array of objects
-const reducedPrices = items. reduce((prev, next) => prev + next.price, 0);
-console.log(reducedPrices);
+// If promo, price is 600. Start value (0) is needed.
+const total = isInPromo ? 600 : items.reduce((prev, next) => prev + next.price, 0);
+console.log(total);
+
 console.log(items);
