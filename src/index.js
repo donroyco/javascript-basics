@@ -7,18 +7,17 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 const drinks = ['Lemonade', 'Lime', 'Peach'];
 
 // Beginning of array
-// drinks.unshift('Water'); // mutable: changes original
-// const newDrinksStartArray = ['Water', ...drinks]; // immutable: new array
+drinks.shift(); // mutable: changes original
+const newDrinksArray = [ ...drinks.slice()]; // immutable: new array
+console.log(newDrinksArray);
 
-// Middle of array
-const index = 1;
-drinks.splice(index, 0, 'Cola'); // mutable: changes original
-const newDrinksMiddleArray = [...drinks.splice(0, index), 'Mojito', ...drinks.splice(index -1)]; // immutable: new array
-console.log(newDrinksMiddleArray);
+// Middle of array (anywhere)
+const index = drinks.length - 1;
+const newDrinks = [...drinks.slice(0, index), ...drinks.slice(index + 1)];
+console.log(newDrinks);
 
 // End of array
-// drinks.push('Cola'); // mutable: changes original
-// const newDrinksEndArray = [...drinks, 'Cola']; // immutable: new array
-// console.log(newDrinksEndArray);
+const removed = drinks.pop();
+console.log(removed);
 
 console.log(drinks);
