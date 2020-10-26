@@ -10,26 +10,16 @@ const items = [
   { id: '🥤', name: 'Big Slurp', price: 299 },
 ];
 
-// Array map: loop over array and access each individual item resulting in a new array
+// Array filter: create a new array with values of the values that meet a certain condition
 
-// Syntax Array.map
-// You have to return a value
-// const returnValue = items.map((value, index, array) => { ... })
+// Syntax Array.filter
+// const returnValue = items.filter((value, index, array) => { ... })
 
-// const mapped = [1, 2, 3, 4, 5].map((x) => x * 2);
-// console.log(mapped);
+// Simple example
+// const filtered = [true, false, true].filter(Boolean);
+// console.log(filtered);
 
-// Declarative style
-// Coupon with half price: loop over our items and change only fries
-// const halfOfFries = items.map(item => {
-//   if (item.id === '🍟') {
-//     return {
-//       ...item,
-//       price: item.price / 2
-//     }
-//   }
-//   return item;
-// });
-// console.log(halfOfFries);
-
+// Filter all items in array with at least certain price
+const expensiveItems = items.filter(item => item.price > 199) ;
+console.log(expensiveItems);
 console.log(items);
