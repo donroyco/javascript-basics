@@ -10,20 +10,19 @@ const items = [
   { id: '🥤', name: 'Big Slurp', price: 299, stock: false },
 ];
 
-// Array every: if every element within a array passes a condition
+// Array find: it returns the first matching element of an array given a condition, or it will return undefined if it can't find one.
 
-// Syntax Array.every
-// returnValue can only be true or false
-// const returnValue = items.every((value, index, array) => { ... });
+// Syntax Array.find
+// const returnValue = items.find((value, index, array) => { ... });
 
 // Simple example
-// const isEveryValueTrue = [true, true, false].every(Boolean);
-// console.log(isEveryValueTrue);
+// const found = ['a', 'b', 'c', 'd', 'e'].find(x => x === 'a');
+// console.log(found);
 
-const isInStock = items.every(item => item.stock);
-if (!isInStock) {
-  console.log(
-    `Sorry, ${items.find(item => !item.stock).name} is out of stock. Try again later.`
-  )
+const fries = items.find(item => item.id === '🍟');
+
+console.log(fries);
+if (fries) {
+  console.log(`${fries.name} ${(fries.price / 100).toFixed(2)}`)
 }
 console.log(items);
