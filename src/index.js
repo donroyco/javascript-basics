@@ -10,27 +10,26 @@ const items = [
   { id: '🥤', name: 'Big Slurp', price: 299 },
 ];
 
-// Syntax forEach
-// items.forEach((value, index, array) => { ... });
+// Array map: loop over array and access each individual item resulting in a new array
 
-// ['a', 'b', 'c', 'd'].forEach((item, index) => {
-//   console.log(item, index);
+// Syntax Array.map
+// You have to return a value
+// const returnValue = items.map((value, index, array) => { ... })
+
+// const mapped = [1, 2, 3, 4, 5].map((x) => x * 2);
+// console.log(mapped);
+
+// Declarative style
+// Coupon with half price: loop over our items and change only fries
+// const halfOfFries = items.map(item => {
+//   if (item.id === '🍟') {
+//     return {
+//       ...item,
+//       price: item.price / 2
+//     }
+//   }
+//   return item;
 // });
+// console.log(halfOfFries);
 
-// items.forEach((item) => {
-//   app.innerHTML += `
-//     <li>
-//         ${item.id} ${item.name} - ${item.price}
-//     </li>
-//   `
-// });
-
-// forEach without forEach
-// for(let i = 0; i < items.length; i++) {
-//   const item = items[i];
-//   app.innerHTML += `
-//     <li>
-//         ${item.id} ${item.name} - ${item.price}
-//     </li>
-//   `
-// }
+console.log(items);
